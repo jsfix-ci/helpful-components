@@ -4,6 +4,18 @@
 
 A collection of helpful components to aid in website building.
 
+## Installation
+
+```
+npm install @alexseitsinger/helpful-components
+```
+
+or
+
+```
+yarn add @alexseitsinger/helpful-components
+```
+
 ## Components
 
 #### Center Box
