@@ -91,6 +91,22 @@ A simple element that is layerd above the rest, and displays a spinner.
 * backgroundColor - (String, Optional) - The background color to use.
 * zIndex - (Number, Optional) - The layer to use with the loading screen.
 
+#### Localized Date String
+
+A component that converts a UTC timestamp string into a localized date string.
+
+##### Props
+
+* date - (String, Required) - The timestamp string to convert.
+
+#### Localized Time String
+
+A component that converts a UTC timestamp string into a localized time string.
+
+##### Props
+
+* time - (String, Required) - The timestamp string to convert.
+
 #### Responsive Width Container
 
 A container that adjusts to a fixed width less than its breakpoint.

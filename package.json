@@ -1,6 +1,6 @@
 {
   "name": "@alexseitsinger/helpful-components",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A collection of helpful components for website building.",
   "main": "dist/main.js",
   "homepage": "https://github.com/alexseitsinger/helpful-components#readme",
