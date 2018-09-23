@@ -24,7 +24,7 @@ A container that is vertically and horizontally centered in it's parent.
 
 ##### Props
 
-* children - (Node(s) / Required) - The element(s) to insert into this one.
+* children - (Node(s), Required) - The element(s) to insert into this one.
 
 #### Center Column
 
@@ -32,7 +32,7 @@ A container that is horizontally centered with fluid width and height of it's pa
 
 ##### Props
 
-* children - (Node(s) / Required) - The element(s) to insert into this one.
+* children - (Node(s), Required) - The element(s) to insert into this one.
 
 #### Editable Textarea
 
@@ -40,11 +40,11 @@ A textarea that contains a submit and cancel button.
 
 ##### Props
 
-* defaultValue - (String / Optional) - The value to insert into the textarea before any other input gets entered.
-* submitButtonStyle - (Object / Optional) - The style to apply to the submit button.
-* onClickSubmitButton - (Function / Required) - The function to invoke when the submit button is clicked. Will be passed the value of the textarea.
-* cancelButtonStyle - (Object / Optional) - The style to apply to the cancel button.
-* onClickCancelButton - (Function / Required) - The function to invoke when the cancel button is clicked.
+* defaultValue - (String, Optional) - The value to insert into the textarea before any other input gets entered.
+* submitButtonStyle - (Object, Optional) - The style to apply to the submit button.
+* onClickSubmitButton - (Function, Required) - The function to invoke when the submit button is clicked. Will be passed the value of the textarea.
+* cancelButtonStyle - (Object, Optional) - The style to apply to the cancel button.
+* onClickCancelButton - (Function, Required) - The function to invoke when the cancel button is clicked.
 
 #### Fixed Top Header
 
@@ -97,5 +97,5 @@ A container that adjusts to a fixed width less than its breakpoint.
 
 ##### Props
 
-* children - (Node(s) / Required) - The element(s) to insert inside this one.
-* align - (Boolean / Optional) - Force the sibling elements to be centered, and fill the width of this container.
+* children - (Node(s), Required) - The element(s) to insert inside this one.
+* align - (Boolean, Optional) - Force the sibling elements to be centered, and fill the width of this container.
