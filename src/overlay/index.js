@@ -1,8 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import {
-    Container,
-    Content
+    Container
 } from "./elements"
 
 class Overlay extends React.Component {
@@ -11,15 +10,11 @@ class Overlay extends React.Component {
             PropTypes.arrayOf(PropTypes.node),
             PropTypes.node
         ]).isRequired,
-        content: PropTypes.node.isRequired,
-        backgroundColor: PropTypes.string
+        content: PropTypes.node.isRequired
     }
-    static defaultProps = {
-        backgroundColor: "rgba(22, 22, 22, 0.50)"
-    };
     state = {
         isVisible: false
-    };
+    }
     handleMouseOver = () => {
         this.setState({
             isVisible: true
@@ -30,25 +25,15 @@ class Overlay extends React.Component {
             isVisible: false
         })
     }
-    renderContent = () => {
-        const {
-            content,
-            backgroundColor,
-        } = this.props
-        return (
-            <Content backgroundColor={backgroundColor}>
-                {content}
-            </Content>
-        )
-    }
     render() {
         const {
             isVisible
         } = this.state
         const {
-            children
+            children,
+            content
         } = this.props
-        const renderedContent = (isVisible ? this.renderContent() : null)
+        const renderedContent = (isVisible ? content : null)
         return (
             <Container
                 onMouseOver={this.handleMouseOver}
