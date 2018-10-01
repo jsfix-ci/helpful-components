@@ -1,6 +1,6 @@
 {
   "name": "@alexseitsinger/helpful-components",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A collection of helpful components for website building.",
   "main": "dist/main.js",
   "homepage": "https://github.com/alexseitsinger/helpful-components#readme",
@@ -37,6 +37,8 @@
     "emotion": "^9.2.10",
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
+    "react-dom": "^16.5.2",
+    "debounce": "^1.2.0",
     "react-emotion": "^9.2.10",
     "underscore": "^1.8.3"
   },
