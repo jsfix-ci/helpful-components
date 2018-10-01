@@ -107,6 +107,14 @@ A component that converts a UTC timestamp string into a localized time string.
 
 * time - (String, Required) - The timestamp string to convert.
 
+#### Responsive Footer Container
+
+A component that toggles the last element between relative and absolute positioning relative to its sibling element.
+
+##### Props
+
+* children - (Node(s) / Required) - The element(s) to render within the container.
+
 #### Responsive Width Container
 
 A container that adjusts to a fixed width less than its breakpoint.
