@@ -32,13 +32,18 @@ class DataController extends React.Component {
 	}
 	dataLoaded = () => {
 		const { data } = this.props
+		var dataEmpty = true
 		if (_.isArray(data)) {
-			return data.every((obj) => {
-				return !_.isEmpty(obj)
+			dataEmpty = data.every((obj) => {
+				return _.isEmpty(obj)
 			})
+		} else if (_.isObject(data)) {
+			dataEmpty = _.isEmpty(data)
 		}
-		if (_.isObject(data)) {
-			return !_.isEmpty(data)
+		if (dataEmpty) {
+			return false
+		} else {
+			return true
 		}
 	}
 	render() {
