@@ -14,7 +14,8 @@ class DataController extends React.Component {
 			PropTypes.arrayOf(PropTypes.node),
 			PropTypes.node
 		]),
-		render: PropTypes.func
+		renderWithoutData: PropTypes.func,
+		renderWithData: PropTypes.func
 	}
 	componentWillUnmount() {
 		const { unloadData } = this.props
@@ -41,13 +42,17 @@ class DataController extends React.Component {
 		}
 	}
 	render() {
-		const { children, render } = this.props
+		const { children, renderWithoutData, renderWithData } = this.props
 		const dataLoaded = this.dataLoaded()
 		if (!dataLoaded) {
-			return null
+			if (_.isFunction(renderWithoutData)) {
+				return renderWithoutData()
+			} else {
+				return null
+			}
 		} else {
-			if (_.isFunction(render)) {
-				return render()
+			if (_.isFunction(renderWithData)) {
+				return renderWithData()
 			} else {
 				return children
 			}
