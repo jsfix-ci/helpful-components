@@ -24,30 +24,26 @@ class DataController extends React.Component {
 	}
 	componentDidMount() {
 		const { loadData } = this.props
-		const dataEmpty = this.dataEmpty()
-		if (dataEmpty) {
+		const dataLoaded = this.dataLoaded()
+		if (!dataLoaded) {
 			loadData()
 		}
 	}
-	dataEmpty = () => {
+	dataLoaded = () => {
 		const { data } = this.props
-		if (_.isObject(data)) {
-			return _.isEmpty(data)
-		}
 		if (_.isArray(data)) {
 			return data.every((obj) => {
-				if (_.isObject(obj)) {
-					return _.isEmpty(obj)
-				}
-				throw new Error("Data item is not an object")
+				return !_.isEmpty(obj)
 			})
 		}
-		throw new Error("Data must be an object or an array of objects")
+		if (_.isObject(data)) {
+			return !_.isEmpty(data)
+		}
 	}
 	render() {
 		const { children, render } = this.props
-		const dataEmpty = this.dataEmpty()
-		if (dataEmpty) {
+		const dataLoaded = this.dataLoaded()
+		if (!dataLoaded) {
 			return null
 		} else {
 			if (_.isFunction(render)) {
