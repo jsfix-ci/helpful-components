@@ -26,6 +26,8 @@ A container that is vertically and horizontally centered in it's parent.
 
 -   children - (Node(s), Required) - The element(s) to insert into this one.
 
+---
+
 #### Center Column
 
 A container that is horizontally centered with fluid width and height of it's parent.
@@ -33,6 +35,8 @@ A container that is horizontally centered with fluid width and height of it's pa
 ##### Props
 
 -   children - (Node(s), Required) - The element(s) to insert into this one.
+
+---
 
 #### Editable Textarea
 
@@ -46,6 +50,8 @@ A textarea that contains a submit and cancel button.
 -   cancelButtonStyle - (Object, Optional) - The style to apply to the cancel button.
 -   onClickCancelButton - (Function, Required) - The function to invoke when the cancel button is clicked.
 
+---
+
 #### Fixed Top Header
 
 A container thats fixed to the top, and spans the entire width. Will still provide its height to the sibling elements when positioning.
@@ -55,6 +61,8 @@ A container thats fixed to the top, and spans the entire width. Will still provi
 -   children - (Node, Required) - The element(s) to insert inside this one.
 -   size - (Number/String, Required) - The height of the header.
 -   zIndex - (Number, Optional) - The zIndex to use for layering.
+
+---
 
 #### Fluid Width Container
 
@@ -66,6 +74,8 @@ A container that fills the width of its parent, fills the height of the parent, 
 -   padding - (Number/String, Optional) - The amount of padding to use on the left and right sides.
 -   align - (Boolean, Optional) - Center the content in the container.
 -   stretchChild - (Boolean, Optional) - Force the child element to fill the width of the container.
+
+---
 
 #### Form Field Error
 
@@ -80,6 +90,25 @@ An error message that can appear on the left, right, top, bottom, or center of a
 -   bodyStyle - (Object, Optional) - The style to apply to the body of the error.
 -   onClick - (Function, Optional) - The function to invoke when the error is clicked.
 
+---
+
+#### Google Analytics
+
+Automatically emits a pageview beacon on location change. Connects to an event emitter to listen for other analytics events to emit a beacon.
+
+##### Props
+
+-   location - (Object, Required) - The current page location object from react-router.
+-   environmentName - (String, Required) - The name of the current environment. Will only emit beacons in production.
+-   id - (String, Required) - The google analytics tracker id.
+-   emitter - (Object, Required) - The event emitter to add/remove listeners to for other analytics events.
+    -   GOOGLE_ANALYTICS_PAGE_VIEW
+    -   GOOGLE_ANALYTICS_MODAL_VIEW
+    -   GOOGLE_ANALYTICS_EVENT
+    -   GOOGLE_ANALYTICS_TIMING
+
+---
+
 #### Loading Screen
 
 A simple element that is layerd above the rest, and displays a spinner.
@@ -91,6 +120,8 @@ A simple element that is layerd above the rest, and displays a spinner.
 -   backgroundColor - (String, Optional) - The background color to use.
 -   zIndex - (Number, Optional) - The layer to use with the loading screen.
 
+---
+
 #### Localized Date String
 
 A component that converts a UTC timestamp string into a localized date string.
@@ -98,6 +129,8 @@ A component that converts a UTC timestamp string into a localized date string.
 ##### Props
 
 -   date - (String, Required) - The timestamp string to convert.
+
+---
 
 #### Localized Time String
 
@@ -107,6 +140,8 @@ A component that converts a UTC timestamp string into a localized time string.
 
 -   time - (String, Required) - The timestamp string to convert.
 
+---
+
 #### Responsive Footer Container
 
 A component that toggles the last element between relative and absolute positioning relative to its sibling element.
@@ -114,6 +149,8 @@ A component that toggles the last element between relative and absolute position
 ##### Props
 
 -   children - (Node(s) / Required) - The element(s) to render within the container.
+
+---
 
 #### Responsive Width Container
 
@@ -124,6 +161,8 @@ A container that adjusts to a fixed width less than its breakpoint.
 -   children - (Node(s), Required) - The element(s) to insert inside this one.
 -   align - (Boolean, Optional) - Force the sibling elements to be centered, and fill the width of this container.
 
+---
+
 #### requireAnonymous (HOC)
 
 ##### Arguments
@@ -131,12 +170,16 @@ A container that adjusts to a fixed width less than its breakpoint.
 -   Component - (Node, Required) - The component to render if isAuthenticated is false.
 -   path - (String, Required) - The path to navigate to, using redux, if isAuthenticated is true.
 
+---
+
 #### requireAuthenticated (HOC)
 
 ##### Arguments
 
 -   Component - (Node, Required) - The component to render if isAuthenticated is true.
 -   path - (String, Required) - The path to navigate to, using redux, if isAuthenticated is false.
+
+---
 
 #### toggledComponent (HOC)
 
