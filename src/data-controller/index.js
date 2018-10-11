@@ -32,17 +32,29 @@ class DataController extends React.Component {
 	}
 	dataLoaded = () => {
 		const { data } = this.props
-		var dataEmpty = true
+		// Set the default flag to false.
+		var hasEmpty = false
 		if (_.isArray(data)) {
-			dataEmpty = data.every((obj) => {
-				return _.isEmpty(obj)
+			// If it's an array of objects, check if each one is empty.
+			data.forEach((obj) => {
+				// If we already found an empty one, exit this test.
+				if (hasEmpty === true) {
+					return
+				}
+				// If we find an empty one set the flag to true.
+				if (_.isEmpty(obj)) {
+					hasEmpty = true
+				}
 			})
+			// If its an object, test if it's empty
 		} else if (_.isObject(data)) {
-			dataEmpty = _.isEmpty(data)
+			// If it's an empty object, set the flag to true.
+			if (_.isEmpty(data)) {
+				hasEmpty = true
+			}
 		}
-		if (dataEmpty) {
-			return false
-		} else {
+		// If hasEmpty is false, return ture that data is loaded.
+		if (hasEmpty === false) {
 			return true
 		}
 	}
