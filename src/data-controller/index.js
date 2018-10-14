@@ -35,6 +35,10 @@ class DataController extends React.Component {
 		// Set the default flag to false.
 		var hasEmpty = false
 		if (_.isArray(data)) {
+			// check if its an empty array
+			if (_.isEmpty(data)) {
+				hasEmpty = true
+			}
 			// If it's an array of objects, check if each one is empty.
 			data.forEach((obj) => {
 				// If we already found an empty one, exit this test.
