@@ -13,7 +13,7 @@ class Overlay extends React.Component {
 	state = {
 		isVisible: false
 	}
-	handleMouseOver = () => {
+	handleMouseEnter = () => {
 		this.setState({
 			isVisible: true
 		})
@@ -29,7 +29,7 @@ class Overlay extends React.Component {
 		const renderedOverlay = isVisible ? renderOverlay() : null
 		return (
 			<Container
-				onMouseOver={this.handleMouseOver}
+				onMouseEnter={this.handleMouseEnter}
 				onMouseLeave={this.handleMouseLeave}>
 				{renderedOverlay}
 				{children}
