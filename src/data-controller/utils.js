@@ -12,7 +12,7 @@ export function isEmpty(data) {
 				if (result) {
 					return
 				}
-				result = this.isEmpty(obj)
+				result = isEmpty(obj)
 			})
 		}
 	} else if (_.isObject(data)) {
