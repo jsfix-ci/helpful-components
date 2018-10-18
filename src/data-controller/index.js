@@ -5,7 +5,7 @@ import { isEmpty } from "./utils"
 
 class DataController extends React.Component {
 	static propTypes = {
-		loadData: PropTypes.func.isRequired,
+		loadData: PropTypes.func,
 		unloadData: PropTypes.func,
 		data: PropTypes.oneOfType([
 			PropTypes.arrayOf(PropTypes.object),
@@ -28,7 +28,9 @@ class DataController extends React.Component {
 		const { loadData } = this.props
 		const dataLoaded = this.dataLoaded()
 		if (!dataLoaded) {
-			loadData()
+			if (_.isFunction(loadData)) {
+				loadData()
+			}
 		}
 	}
 	dataLoaded = () => {
