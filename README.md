@@ -74,6 +74,7 @@ A container that fills the width of its parent, fills the height of the parent, 
 -   padding - (Number/String, Optional) - The amount of padding to use on the left and right sides.
 -   align - (Boolean, Optional) - Center the content in the container.
 -   stretchChild - (Boolean, Optional) - Force the child element to fill the width of the container.
+-   containerClassName - (String, Optional) - The classname to use on the container element.
 
 ---
 
@@ -139,6 +140,18 @@ A component that converts a UTC timestamp string into a localized time string.
 ##### Props
 
 -   time - (String, Required) - The timestamp string to convert.
+
+---
+
+#### Overlay
+
+A component that renders an overlay of elements on mouseenter and removes the overlay onmouseleave.
+
+##### Props
+
+-   children - (Node(s), Required) - The children to render underneath the overlay.
+-   renderOverlay - (Function, Required) - The method to invoke to render the overlay.
+-   containerClassname - (String, Optional) - The classname to use on the overlay container element. Useful for finding element in tests.
 
 ---
 

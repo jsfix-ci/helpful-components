@@ -8,7 +8,11 @@ class Overlay extends React.Component {
 			PropTypes.arrayOf(PropTypes.node),
 			PropTypes.node
 		]).isRequired,
-		renderOverlay: PropTypes.func.isRequired
+		renderOverlay: PropTypes.func.isRequired,
+		containerClassName: PropTypes.string
+	}
+	static defaultProps = {
+		containerClassName: "Overlay"
 	}
 	state = {
 		isVisible: false
@@ -25,10 +29,11 @@ class Overlay extends React.Component {
 	}
 	render() {
 		const { isVisible } = this.state
-		const { children, renderOverlay } = this.props
+		const { children, renderOverlay, containerClassName } = this.props
 		const renderedOverlay = isVisible ? renderOverlay() : null
 		return (
 			<Container
+				className={containerClassName}
 				onMouseEnter={this.handleMouseEnter}
 				onMouseLeave={this.handleMouseLeave}>
 				{renderedOverlay}

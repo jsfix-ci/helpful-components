@@ -21,7 +21,7 @@ class FormFieldError extends React.Component {
 		containerClassName: PropTypes.string
 	}
 	static defaultProps = {
-		containerClassName: "form-field-error",
+		containerClassName: "FormFieldError",
 		bodyStyle: {
 			zIndex: 100
 		},
