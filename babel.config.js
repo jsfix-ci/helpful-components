@@ -1,6 +1,6 @@
-{
-	"presets": ["@babel/preset-env", "@babel/preset-react"],
-	"plugins": [
+module.exports = {
+	presets: ["@babel/preset-env", "@babel/preset-react"],
+	plugins: [
 		"emotion",
 		"@babel/plugin-proposal-class-properties",
 		"@babel/plugin-proposal-export-namespace-from",

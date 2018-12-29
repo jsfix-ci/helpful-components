@@ -10,15 +10,15 @@ class RavenErrorBoundary extends React.Component {
 			PropTypes.arrayOf(PropTypes.node),
 			PropTypes.node
 		]).isRequired,
-		render: PropTypes.func
+		render: PropTypes.func,
+		isEnvironment: PropTypes.bool.isRequired
 	}
 	state = {
-		error: null,
-		isProduction: !!(process.env.NODE_ENV === "production")
+		error: null
 	}
 	componentDidCatch(error, errorInfo) {
-		const { isProduction } = this.state
-		if (isProduction) {
+		const { isEnvironment } = this.props
+		if (isEnvironment) {
 			this.setState({ error })
 			Raven.captureException(error, {
 				extra: errorInfo
@@ -29,10 +29,10 @@ class RavenErrorBoundary extends React.Component {
 		Raven.lastEventId() && Raven.showReportDialog()
 	}
 	render() {
-		const { isProduction, error } = this.state
-		const { children, render } = this.props
+		const { isEnvironment, children, render } = this.props
+		const { error } = this.state
 		const handleClick = this.handleClick
-		if (isProduction && error) {
+		if (isEnvironment && error) {
 			if (_.isFunction(render)) {
 				return render(handleClick)
 			} else {

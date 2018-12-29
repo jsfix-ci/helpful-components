@@ -1,26 +1,21 @@
 import React from "react"
 import PropTypes from "prop-types"
-import {
-    Container
-} from "./elements"
+import { Container } from "./elements"
 
-class CenterColumn extends React.Component {
-    static propTypes = {
-        children: PropTypes.oneOfType([
-            PropTypes.arrayOf(PropTypes.node),
-            PropTypes.node
-        ]).isRequired
-    };
-    render() {
-        const {
-            children
-        } = this.props
-        return (
-            <Container>
-                {children}
-            </Container>
-        )
-    }
+function CenterColumn({ children, containerClassName }) {
+	return <Container className={containerClassName}>{children}</Container>
+}
+
+CenterColumn.defaultProps = {
+	containerClassName: "CenterColumn"
+}
+
+CenterColumn.propTypes = {
+	containerClassName: PropTypes.string,
+	children: PropTypes.oneOfType([
+		PropTypes.arrayOf(PropTypes.node),
+		PropTypes.node
+	]).isRequired
 }
 
 export default CenterColumn

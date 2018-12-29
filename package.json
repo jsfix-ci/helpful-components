@@ -1,6 +1,6 @@
 {
 	"name": "@alexseitsinger/helpful-components",
-	"version": "0.1.21",
+	"version": "0.2.0",
 	"description": "A collection of helpful components for website building.",
 	"main": "dist/main.js",
 	"homepage": "https://github.com/alexseitsinger/helpful-components#readme",
@@ -16,34 +16,40 @@
 	},
 	"files": ["dist/", "package.json", "README.md"],
 	"devDependencies": {
-		"babel-core": "^6.26.3",
-		"babel-loader": "^7.1.5",
-		"babel-preset-env": "^1.7.0",
-		"babel-preset-react": "^6.24.1",
-		"babel-preset-stage-0": "^6.24.1",
-		"babel-plugin-emotion": "^9.2.10",
-		"babel-plugin-transform-react-remove-prop-types": "^0.4.13",
-		"webpack": "^4.16.1",
-		"webpack-cli": "^3.1.0"
+		"@babel/core": "^7.2.2",
+		"@babel/plugin-proposal-class-properties": "^7.2.3",
+		"@babel/plugin-proposal-export-default-from": "^7.2.0",
+		"@babel/plugin-proposal-export-namespace-from": "^7.2.0",
+		"@babel/preset-env": "^7.2.3",
+		"@babel/preset-react": "^7.0.0",
+		"babel-core": "7.0.0-bridge.0",
+		"babel-jest": "^23.6.0",
+		"babel-loader": "^8.0.4",
+		"babel-plugin-emotion": "^10.0.5",
+		"enzyme": "^3.8.0",
+		"enzyme-adapter-react-16": "^1.7.1",
+		"jest": "^23.6.0",
+		"jest-emotion": "^10.0.5",
+		"webpack": "^4.28.2",
+		"webpack-cli": "^3.1.2"
 	},
 	"dependencies": {
-		"@fortawesome/fontawesome-svg-core": "^1.2.0-14",
-		"@fortawesome/free-solid-svg-icons": "^5.1.0-11",
-		"@fortawesome/react-fontawesome": "^0.1.0-11",
-		"emotion": "^9.2.10",
-		"prop-types": "^15.6.2",
-		"react": "^16.4.1",
-		"react-dom": "^16.5.2",
-		"redux": "^3.7.2",
-		"react-redux": "^5.0.7",
-		"react-router-redux": "^5.0.0-alpha.9",
+		"@emotion/core": "^10.0.5",
+		"@emotion/styled": "^10.0.5",
+		"connected-react-router": "^6.1.0",
 		"debounce": "^1.2.0",
-		"react-emotion": "^9.2.10",
-		"underscore": "^1.8.3",
+		"history": "^4.7.2",
+		"prop-types": "^15.6.2",
 		"raven-js": "^3.24.2",
-		"react-ga": "^2.5.3"
+		"react": "^16.7.0",
+		"react-dom": "^16.7.0",
+		"react-redux": "^6.0.0",
+		"react-router": "^4.3.1",
+		"redux": "^4.0.1",
+		"underscore": "^1.8.3"
 	},
 	"scripts": {
-		"build": "./node_modules/.bin/webpack --config=webpack.config.js"
+		"build": "./node_modules/.bin/webpack --config=webpack.config.js",
+		"test": "./node_modules/.bin/jest"
 	}
 }
