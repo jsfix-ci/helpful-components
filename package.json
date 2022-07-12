@@ -14,7 +14,11 @@
 		"type": "git",
 		"url": "https://github.com/alexseitsinger/helpful-components.git"
 	},
-	"files": ["dist/", "package.json", "README.md"],
+	"files": [
+		"dist/",
+		"package.json",
+		"README.md"
+	],
 	"devDependencies": {
 		"@babel/core": "^7.2.2",
 		"@babel/plugin-proposal-class-properties": "^7.2.3",
@@ -38,7 +42,7 @@
 		"@emotion/styled": "^10.0.5",
 		"connected-react-router": "^6.1.0",
 		"debounce": "^1.2.0",
-		"history": "^4.7.2",
+		"history": "^5.3.0",
 		"prop-types": "^15.6.2",
 		"raven-js": "^3.24.2",
 		"react": "^16.7.0",
